@@ -12,7 +12,8 @@
 }
 
 .time-select,
-.sound-picker {
+.sound-picker,
+.player-container {
     height: 80%;
     flex: 1;
 }
@@ -23,4 +24,8 @@
 
 .sound-picker {
     background: lightgreen;
+}
+
+.player-container {
+    background: lightcoral;
 }
