@@ -1,6 +1,6 @@
 const app = () => {
     const song = document.querySelector('.song');
-    const play = document.querySelector('play');
+    const play = document.querySelector('.play');
     const outline = document.querySelector('.moving-outline circle');
     const video = document.querySelector('.vid-container video');
 
@@ -24,11 +24,11 @@ const app = () => {
         if (song.paused) {
             song.play();
             video.play();
-            play.src = "./svg/pause.svg";
+            play.src = "meditation-app-master/svg/pause.svg";
         } else {
             song.pause();
             video.pause();
-            play.src = "./svg/play.svg";
+            play.src = "meditation-app-master/svg/play.svg";
         }
     };
     play.addEventListener("click", () => {
