@@ -12,7 +12,29 @@ const app = () => {
 
     // Get the lenght of outline
     const outlineLength = outline.getTotalLength();
-    console.log(outlineLength)
-}
+
+    // Duration
+    let fakeDuration = 600;
+
+    outline.style.strokeDasharray = outlineLength;
+    outline.style.strokeDashoffset = outlineLength;
+
+    // Playsound
+    play.addEventListener("click", () => {
+        checkPlaying(song);
+    });
+
+    // Function to start and stop sound
+    const checkPlaying = song => {
+        if (song.paused) {
+            song.play();
+            play.src = './svg/pause.svg';
+        } else {
+            song.pause();
+            video.pause();
+            play.src = './svg/play.svg';
+        }
+    }
+};
 
 app();

@@ -46,13 +46,13 @@
     width: 30%;
     background: none;
     cursor: pointer;
-    height: 30%;
+    height: 15%;
 }
 
 .btn-black2:hover,
 .btn-black2:active,
 .btn-black2:focus {
-    background: rgb(73, 138, 73);
+    background: rgb(183, 189, 183);
     color: white;
     border-radius: 15%;
     transition: all 0.5s ease;
