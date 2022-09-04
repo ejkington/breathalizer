@@ -29,3 +29,21 @@
 .player-container {
     background: lightcoral;
 }
+
+.buttons {
+    border-radius: 15%;
+}
+
+.btn-black2 {
+    background: rgb(78, 69, 69);
+    color: white;
+    margin: 1rem;
+}
+
+.btn-black2:hover,
+.btn-black2:active,
+.btn-black2:focus {
+    background: rgb(73, 138, 73);
+    color: white;
+    border-radius: 15%;
+}
