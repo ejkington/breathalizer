@@ -19,22 +19,21 @@ const app = () => {
     outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
 
-    // Playsound
-    play.addEventListener("click", () => {
-        checkPlaying(song);
-    });
-
     // Function to start and stop sound
     const checkPlaying = song => {
         if (song.paused) {
             song.play();
-            play.src = './svg/pause.svg';
+            video.play();
+            play.src = "./svg/pause.svg";
         } else {
             song.pause();
             video.pause();
-            play.src = './svg/play.svg';
+            play.src = "./svg/play.svg";
         }
-    }
+    };
+    play.addEventListener("click", () => {
+        checkPlaying(song);
+    });
 };
 
 app();
