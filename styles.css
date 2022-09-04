@@ -72,3 +72,10 @@ video {
     color: white;
     font-size: 50px;
 }
+
+.sound-picker button {
+    background: none;
+    border: none;
+    height: 120px;
+    width: 120px;
+}
