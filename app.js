@@ -9,6 +9,7 @@ const app = () => {
 
     // Display Time
     const timeDisplay = document.querySelector('.time-display');
+    const timeSelect = document.querySelectorAll('.time-select button');
 
     // Get the lenght of outline
     const outlineLength = outline.getTotalLength();
@@ -18,6 +19,22 @@ const app = () => {
 
     outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
+
+    // play sound 
+
+    play.addEventListener('click', () => {
+        checkPlaying(song);
+    });
+
+    // select sound
+    timeSelect.forEach(option => {
+        option.addEventListener('click', function () {
+            fakeDuration = this.getAttribute('data-time');
+            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}: ${Math.floor(fakeDuration % 60)}`
+        });
+    });
+
+
 
     // Function to start and stop sound
     const checkPlaying = song => {
@@ -31,9 +48,23 @@ const app = () => {
             play.src = "meditation-app-master/svg/play.svg";
         }
     };
-    play.addEventListener("click", () => {
-        checkPlaying(song);
-    });
+
+    // adds animation too circle too time with the song
+    song.ontimeupdate = () => {
+        let currentTime = song.currentTime;
+        let elapsedTime = fakeDuration - currentTime;
+        let seconds = Math.floor(elapsedTime % 60);
+        let minutes = Math.floor(elapsedTime / 60);
+
+        // Animates the circle
+
+        let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
+        outline.style.strokeDashoffset = progress;
+
+        // Animates the text 
+
+        timeDisplay.textContent = `${minutes}:${seconds}`;
+    };
 };
 
 app();
